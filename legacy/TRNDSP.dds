@@ -1,0 +1,61 @@
+     A*****************************************
+     A* Arquivo: TRNDSP                         *
+     A* Descrição: Telas do Cadastro            *
+     A*****************************************
+     A          DSPSIZ(24 80 *DS3)
+     A          INDARA
+     A          CA03(03 'F3=Sair')
+     A          CA12(12 'F12=Cancelar')
+     A
+     A*--- Tela de Listagem (Subfile) ---
+     A          R TRNSFL                   SFL
+     A            TRNCOD        R        O  5  4
+     A            TRNNOM        R        O  5 18
+     A            TRNCNPJ       R        O  5 50
+     A            TRNSTS        R        O  5 72
+     A          R TRNCTL                   SFLCTL(TRNSFL)
+     A                                      SFLSIZ(0015)
+     A                                      SFLPAG(0010)
+     A  31                                  SFLDSP
+     A  30                                  SFLDSPCTL
+     A  32                                  SFLCLR
+     A  33                                  SFLEND(*MORE)
+     A            SFLRRN         4S 0H      SFLRCDNBR
+     A                                  1  2'*** Cadastro de Transportadoras ***'
+     A                                  3  4'Código'
+     A                                  3 18'Razão Social'
+     A                                  3 50'CNPJ'
+     A                                  3 72'St'
+     A                                 23  4'F3=Sair  F6=Incluir  F10=Atualizar'
+     A
+     A*--- Tela de Detalhe (Manutenção) ---
+     A          R TRNDTL
+     A                                  1  2'*** Manutenção de Transportadora ***'
+     A                                  3  2'Código . . . :'
+     A            TRNCOD        10A  B  3 20
+     A                                  4  2'Razão Social :'
+     A            TRNNOM        50A  B  4 20
+     A                                  5  2'Nome Fantasia:'
+     A            TRNFAN        30A  B  5 20
+     A                                  6  2'CNPJ . . . . :'
+     A            TRNCNPJ       18A  B  6 20
+     A                                  7  2'Inscr. Estadual:'
+     A            TRNIEP        15A  B  7 20
+     A                                  8  2'Endereço . . :'
+     A            TRNEND        60A  B  8 20
+     A                                  9  2'Cidade . . . :'
+     A            TRNCID        40A  B  9 20
+     A                                 10  2'UF . . . . . :'
+     A            TRNUF          2A  B 10 20
+     A                                 10 25'CEP:'
+     A            TRNCEP         9A  B 10 30
+     A                                 11  2'Telefone . . :'
+     A            TRNFON        15A  B 11 20
+     A                                 12  2'E-mail . . . :'
+     A            TRNEML        60A  B 12 20
+     A                                 13  2'Status . . . :'
+     A            TRNSTS         1A  B 13 20
+     A                                 13 25'(A=Ativo / I=Inativo)'
+     A                                 22  2'F3=Sair  F4=Excluir  F12=Cancelar'
+     A                                 24  2'Erro:'
+     A            TRNMSG        70A  O 24 10

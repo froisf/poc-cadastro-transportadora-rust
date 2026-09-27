@@ -1,0 +1,21 @@
+     A*****************************************
+     A* Arquivo: TRNPF                         *
+     A* Descrição: Cadastro de Transportadoras *
+     A* PoC Fictícia - Flavio Frois            *
+     A*****************************************
+     A          R TRNREC
+     A            TRNCOD        10A         TEXT('Código Transportadora')
+     A            TRNNOM        50A         TEXT('Razão Social')
+     A            TRNFAN        30A         TEXT('Nome Fantasia')
+     A            TRNCNPJ       18A         TEXT('CNPJ')
+     A            TRNIEP        15A         TEXT('Inscrição Estadual')
+     A            TRNEND        60A         TEXT('Endereço')
+     A            TRNCID        40A         TEXT('Cidade')
+     A            TRNUF          2A         TEXT('UF')
+     A            TRNCEP         9A         TEXT('CEP')
+     A            TRNFON        15A         TEXT('Telefone')
+     A            TRNEML        60A         TEXT('E-mail')
+     A            TRNSTS         1A         TEXT('Status (A/I)')
+     A            TRNDTC         8S 0       TEXT('Data Cadastro')
+     A            TRNDTA         8S 0       TEXT('Data Alteração')
+     A          K TRNCOD
